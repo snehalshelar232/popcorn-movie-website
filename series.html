@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Web Series - Popcorn</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">
+                Popcorn
+            </a>
+
+           <ul class="nav-links">
+
+    <li>
+        <a href="index.html">
+            Home
+        </a>
+    </li>
+
+    <li>
+        <a href="index.html#movies">
+            Movies
+        </a>
+    </li>
+
+    <li>
+        <a href="series.html">
+            Web Series
+        </a>
+    </li>
+
+    <li>
+        <a href="favorites.html">
+            ❤️ Favorites
+        </a>
+    </li>
+
+    <li>
+        <button id="theme-toggle" class="theme-toggle">
+            ☀️
+        </button>
+    </li>
+
+</ul>
+        </nav>
+
+    </header>
+
+
+    <!-- =========================
+         HERO SECTION
+    ========================== -->
+
+    <section class="hero">
+
+        <div class="hero-content series-hero-content">
+
+    <div class="series-badge">
+        📺 SERIES DISCOVERY
+    </div>
+
+    <h1>
+        Discover Your Next
+        <span>Web Series</span>
+    </h1>
+
+            <p>
+                Explore popular shows, discover new stories,
+                and find your next binge-worthy series.
+            </p>
+
+            <div class="search-box">
+
+                <input
+                    type="text"
+                    id="seriesSearchInput"
+                    placeholder="Search for a web series..."
+                >
+
+                <button id="seriesSearchBtn">
+                    Search
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         WEB SERIES SECTION
+    ========================== -->
+
+    <main>
+
+        <section
+            class="movies-section"
+            id="series">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <h2>
+                        Popular Web Series
+                    </h2>
+
+                    <p class="section-subtitle">
+                        Find your next binge-worthy series 📺
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SERIES GENRE FILTERS -->
+
+            <div class="genre-filters">
+
+                <button
+                    class="series-genre-btn active"
+                    data-series-genre="all">
+                    All
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="10759">
+                    Action & Adventure
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="35">
+                    Comedy
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="18">
+                    Drama
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="80">
+                    Crime
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="10765">
+                    Sci-Fi & Fantasy
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="9648">
+                    Mystery
+                </button>
+
+                <button
+                    class="series-genre-btn"
+                    data-series-genre="16">
+                    Animation
+                </button>
+
+            </div>
+
+
+            <!-- SERIES GRID -->
+
+            <div
+                class="movie-container"
+                id="series-container">
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Popcorn. Made as a college project.
+        </p>
+
+    </footer>
+
+
+    <!-- =========================
+         SERIES DETAILS POPUP
+    ========================== -->
+
+    <div
+        id="series-modal"
+        class="movie-modal">
+
+        <div class="movie-modal-content">
+
+            <button
+                id="close-series-modal"
+                class="close-modal">
+                ×
+            </button>
+
+            <div id="series-details"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         TRAILER POPUP
+    ========================== -->
+
+    <div
+        id="series-trailer-modal"
+        class="trailer-modal">
+
+        <div class="trailer-content">
+
+            <button
+                id="close-series-trailer"
+                class="close-trailer">
+                ×
+            </button>
+
+            <div class="trailer-video">
+
+                <iframe
+                    id="series-trailer-frame"
+                    src=""
+                    title="Web Series Trailer"
+                    allow="autoplay; encrypted-media"
+                    allowfullscreen>
+                </iframe>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="series.js"></script>
+
+</body>
+
+</html>
