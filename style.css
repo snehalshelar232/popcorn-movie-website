@@ -269,6 +269,48 @@ body {
 /* =========================
    WEB SERIES BADGE
 ========================= */
+/* =========================
+   WEB SERIES HERO
+========================= */
+
+.series-hero-content {
+    text-align: center;
+
+    
+}
+
+.series-badge {
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-bottom: 20px;
+    color: #333;
+    box-shadow:
+        0 0 25px rgba(229, 9, 20, 0.15);
+
+    animation: badgeGlow 2s ease-in-out infinite alternate;
+}
+
+.series-hero-content h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+.series-hero-content h1 span {
+    color: #e50914;
+}
+
+.series-hero-content p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    color: #444;
+}
+
+.series-hero-content .search-box {
+    max-width: 850px;
+    margin: 0 auto;
+}
 
 .hero-content.series-hero-content::before {
     content: none;
@@ -2808,3 +2850,4 @@ body.light-theme .no-results {
     }
 
 }
+
