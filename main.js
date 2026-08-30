@@ -785,3 +785,157 @@ themeToggle.addEventListener("click", function() {
     }
 
 });
+
+// =========================
+// FEATURED MOVIE
+// =========================
+
+const featuredTitle =
+    document.querySelector("#featured-title");
+
+const featuredRating =
+    document.querySelector("#featured-rating");
+
+const featuredYear =
+    document.querySelector("#featured-year");
+
+const featuredOverview =
+    document.querySelector("#featured-overview");
+
+const featuredTrailer =
+    document.querySelector("#featured-trailer");
+
+const featuredFavorite =
+    document.querySelector("#featured-favorite");
+
+let featuredMovie = null;
+
+
+// =========================
+// GET FEATURED MOVIE
+// =========================
+
+function getFeaturedMovie() {
+
+    fetch(POPULAR_URL)
+
+        .then(function(response) {
+            return response.json();
+        })
+
+        .then(function(data) {
+
+            if (!data.results || data.results.length === 0) {
+                return;
+            }
+
+            // Pick a highly rated movie
+            featuredMovie = data.results
+                .filter(function(movie) {
+                    return movie.backdrop_path;
+                })
+                .sort(function(a, b) {
+                    return b.vote_average - a.vote_average;
+                })[0];
+
+
+            displayFeaturedMovie(featuredMovie);
+
+        })
+
+        .catch(function(error) {
+
+            console.log(
+                "Featured Movie Error:",
+                error
+            );
+
+        });
+}
+
+
+// =========================
+// DISPLAY FEATURED MOVIE
+// =========================
+
+function displayFeaturedMovie(movie) {
+
+    if (!movie) {
+        return;
+    }
+
+
+    featuredTitle.innerHTML =
+        `Discover Your Next<br>
+        <span>${movie.title}</span>`;
+
+
+    featuredRating.textContent =
+        `⭐ ${movie.vote_average
+            ? movie.vote_average.toFixed(1)
+            : "N/A"
+        }`;
+
+
+    featuredYear.textContent =
+        `📅 ${movie.release_date
+            ? movie.release_date.substring(0, 4)
+            : "N/A"
+        }`;
+
+
+    featuredOverview.textContent =
+        movie.overview ||
+        "Discover this amazing movie on Popcorn.";
+
+
+    // Set movie backdrop
+
+    document.querySelector(".hero").style.backgroundImage = `
+        linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.95),
+            rgba(0, 0, 0, 0.75),
+            rgba(0, 0, 0, 0.45)
+        ),
+        url("https://image.tmdb.org/t/p/original${movie.backdrop_path}")
+    `;
+
+}
+
+
+// =========================
+// FEATURED TRAILER
+// =========================
+
+featuredTrailer.addEventListener("click", function() {
+
+    if (featuredMovie) {
+
+        watchTrailer(featuredMovie.id);
+
+    }
+
+});
+
+
+// =========================
+// FEATURED FAVORITE
+// =========================
+
+featuredFavorite.addEventListener("click", function() {
+
+    if (featuredMovie) {
+
+        addToFavorites(featuredMovie);
+
+    }
+
+});
+
+
+// =========================
+// LOAD FEATURED MOVIE
+// =========================
+
+getFeaturedMovie();

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -249,6 +250,203 @@
     <script src="series.js"></script>
 
 
+</body>
+
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Popcorn - Discover Movies</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav class="navbar">
+
+            <a href="index.html" class="logo">Popcorn</a>
+
+            <ul class="nav-links">
+
+    <li>
+        <a href="index.html">
+            Home
+        </a>
+    </li>
+
+    <li>
+        <a href="#movies">
+            Movies
+        </a>
+    </li>
+
+    <li>
+        <a href="favorites.html">
+            ❤️ Favorites
+        </a>
+    </li>
+<li>
+    <button id="theme-toggle" class="theme-toggle">
+        ☀️
+    </button>
+</li>
+</ul>
+
+        </nav>
+    </header>
+
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Hero Section -->
+        <section class="hero">
+
+            <div class="hero-content">
+                <h1>Discover Your Next <span>Favorite Movie</span></h1>
+
+                <p>
+                    Explore movies, discover new stories,
+                    and find something worth watching.
+                </p>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search for a movie..."
+                    >
+
+                    <button id="searchBtn">
+                        Search
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- Popular Movies Section -->
+        <section class="movies-section">
+
+    <div class="section-heading">
+
+        <div>
+            <h2>Popular Movies</h2>
+
+            <p class="section-subtitle">
+                Find something you'll love 🎬
+            </p>
+        </div>
+
+        <a href="#">View All</a>
+
+    </div>
+
+
+    <!-- GENRE FILTERS -->
+
+    <div class="genre-filters">
+
+        <button class="genre-btn active" data-genre="all">
+            All
+        </button>
+
+        <button class="genre-btn" data-genre="28">
+            Action
+        </button>
+
+        <button class="genre-btn" data-genre="35">
+            Comedy
+        </button>
+
+        <button class="genre-btn" data-genre="27">
+            Horror
+        </button>
+
+        <button class="genre-btn" data-genre="10749">
+            Romance
+        </button>
+
+        <button class="genre-btn" data-genre="878">
+            Sci-Fi
+        </button>
+
+        <button class="genre-btn" data-genre="16">
+            Animation
+        </button>
+
+        <button class="genre-btn" data-genre="53">
+            Thriller
+        </button>
+
+    </div>
+
+
+    <!-- MOVIE GRID -->
+
+    <div class="movie-container"></div>
+
+</section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <p>© 2026 CineFind. All rights reserved.</p>
+
+    </footer>
+
+
+    <script src="main.js"></script>
+<!-- Movie Details Popup -->
+
+<div id="movie-modal" class="movie-modal">
+
+    <div class="movie-modal-content">
+
+        <button id="close-modal" class="close-modal">
+            ×
+        </button>
+
+        <div id="movie-details"></div>
+
+    </div>
+
+</div>
+<!-- Trailer Popup -->
+
+<div id="trailer-modal" class="trailer-modal">
+
+    <div class="trailer-content">
+
+        <button id="close-trailer" class="close-trailer">
+            ×
+        </button>
+
+        <div class="trailer-video">
+
+            <iframe
+                id="trailer-frame"
+                src=""
+                title="Movie Trailer"
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+
+        </div>
+
+    </div>
+
+</div>
 </body>
 
 </html>

@@ -105,6 +105,9 @@ body {
 /* =========================
    HERO
 ========================= */
+/* =========================
+   CINEMATIC HERO
+========================= */
 
 .hero {
     min-height: 650px;
@@ -115,7 +118,7 @@ body {
 
     text-align: center;
 
-    padding: 80px 20px;
+    padding: 90px 20px;
 
     position: relative;
     overflow: hidden;
@@ -123,86 +126,45 @@ body {
     background:
         radial-gradient(
             circle at 15% 35%,
-            rgba(229, 9, 20, 0.25),
+            rgba(229, 9, 20, 0.28),
             transparent 35%
         ),
         radial-gradient(
             circle at 85% 65%,
-            rgba(229, 9, 20, 0.16),
+            rgba(229, 9, 20, 0.18),
             transparent 35%
         ),
         linear-gradient(
             135deg,
-            #080808,
+            #050505,
             #151010,
-            #080808
+            #050505
         );
 }
 
 
-/* Large cinematic glow */
-
-/* MOVIE HERO BADGE */
-
-.hero-content::before {
-    content: "🎬  MOVIE DISCOVERY";
-
-    display: inline-block;
-
-    padding: 9px 20px;
-
-    margin-bottom: 25px;
-
-    border: 1px solid rgba(229, 9, 20, 0.6);
-
-    border-radius: 30px;
-
-    color: #ff5b63;
-
-    background: rgba(229, 9, 20, 0.08);
-
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    box-shadow: 0 0 25px rgba(229, 9, 20, 0.15);
-}
-
 /* =========================
-   WEB SERIES BADGE
+   CINEMATIC GLOW
 ========================= */
 
-.series-badge {
-    display: inline-block;
+.hero::before {
+    content: "";
 
-    padding: 9px 20px;
+    position: absolute;
 
-    margin-bottom: 25px;
+    width: 650px;
+    height: 650px;
 
-    border: 1px solid rgba(229, 9, 20, 0.6);
+    background: rgba(229, 9, 20, 0.10);
 
-    border-radius: 30px;
+    border-radius: 50%;
 
-    color: #ff5b63;
+    filter: blur(130px);
 
-    background: rgba(229, 9, 20, 0.08);
+    top: -320px;
+    left: -220px;
 
-    font-size: 12px;
-
-    font-weight: bold;
-
-    letter-spacing: 2px;
-
-    box-shadow: 0 0 25px rgba(229, 9, 20, 0.15);
-}
-
-
-/* Remove Movie Discovery badge from Series page */
-
-.hero-content.series-hero-content::before {
-    content: none;
+    pointer-events: none;
 }
 
 
@@ -211,19 +173,20 @@ body {
 
     position: absolute;
 
-    width: 500px;
-    height: 500px;
+    width: 550px;
+    height: 550px;
 
     background: rgba(229, 9, 20, 0.08);
 
     border-radius: 50%;
 
-    filter: blur(120px);
+    filter: blur(130px);
 
-    bottom: -250px;
-    right: -200px;
+    bottom: -280px;
+    right: -220px;
+
+    pointer-events: none;
 }
-/* ADD THIS BELOW IT */
 
 
 /* =========================
@@ -231,19 +194,21 @@ body {
 ========================= */
 
 .hero-content {
-    max-width: 900px;
+    max-width: 950px;
 
     position: relative;
+
     z-index: 2;
 
     animation: heroFade 1s ease;
 }
 
+
 @keyframes heroFade {
 
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(30px);
     }
 
     to {
@@ -253,18 +218,20 @@ body {
 }
 
 
-/* Badge */
+/* =========================
+   MOVIE DISCOVERY BADGE
+========================= */
 
 .hero-content::before {
     content: "🎬  MOVIE DISCOVERY";
 
     display: inline-block;
 
-    padding: 9px 20px;
+    padding: 10px 22px;
 
-    margin-bottom: 25px;
+    margin-bottom: 28px;
 
-    border: 1px solid rgba(229, 9, 20, 0.6);
+    border: 1px solid rgba(229, 9, 20, 0.65);
 
     border-radius: 30px;
 
@@ -278,14 +245,42 @@ body {
 
     letter-spacing: 2px;
 
-    box-shadow: 0 0 25px rgba(229, 9, 20, 0.15);
+    box-shadow:
+        0 0 25px rgba(229, 9, 20, 0.15);
+
+    animation: badgeGlow 2s ease-in-out infinite alternate;
 }
 
 
-/* Heading */
+@keyframes badgeGlow {
+
+    from {
+        box-shadow:
+            0 0 15px rgba(229, 9, 20, 0.10);
+    }
+
+    to {
+        box-shadow:
+            0 0 30px rgba(229, 9, 20, 0.30);
+    }
+}
+
+
+/* =========================
+   WEB SERIES BADGE
+========================= */
+
+.hero-content.series-hero-content::before {
+    content: none;
+}
+
+
+/* =========================
+   HERO HEADING
+========================= */
 
 .hero h1 {
-    font-size: 68px;
+    font-size: 72px;
 
     line-height: 1.05;
 
@@ -298,24 +293,29 @@ body {
     color: white;
 }
 
+
 .hero h1 span {
     color: #e50914;
 
     text-shadow:
-        0 0 20px rgba(229, 9, 20, 0.25);
+        0 0 25px rgba(229, 9, 20, 0.30);
 }
 
 
-/* Description */
+/* =========================
+   HERO DESCRIPTION
+========================= */
 
 .hero p {
     font-size: 18px;
+
+    line-height: 1.7;
 
     color: #aaa;
 
     margin-bottom: 38px;
 
-    max-width: 650px;
+    max-width: 680px;
 
     margin-left: auto;
     margin-right: auto;
@@ -323,7 +323,7 @@ body {
 
 
 /* =========================
-   SEARCH
+   SEARCH BOX
 ========================= */
 
 .search-box {
@@ -344,14 +344,18 @@ body {
         0 15px 45px rgba(0, 0, 0, 0.6),
         0 0 35px rgba(229, 9, 20, 0.15);
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
+
 .search-box:focus-within {
+    transform: translateY(-3px);
+
     box-shadow:
-        0 15px 50px rgba(0, 0, 0, 0.7),
-        0 0 35px rgba(229, 9, 20, 0.3);
+        0 20px 55px rgba(0, 0, 0, 0.7),
+        0 0 45px rgba(229, 9, 20, 0.30);
 }
+
 
 .search-box input {
     flex: 1;
@@ -359,6 +363,7 @@ body {
     padding: 19px 22px;
 
     border: none;
+
     outline: none;
 
     background: white;
@@ -368,9 +373,11 @@ body {
     font-size: 16px;
 }
 
+
 .search-box input::placeholder {
     color: #888;
 }
+
 
 .search-box button {
     padding: 0 34px;
@@ -382,17 +389,17 @@ body {
     color: white;
 
     font-size: 16px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
-
 .search-box button:hover {
     background: #ff1824;
+    transform: scale(1.03);
 }
-
 
 /* =========================
    MOVIES SECTION
